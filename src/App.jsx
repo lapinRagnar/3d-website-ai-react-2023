@@ -1,4 +1,4 @@
-import Customizer from "./Customizer"
+import Customizer from "./pages/Customizer"
 import Canvas from "./canvas"
 import Home from "./pages/Home"
 
