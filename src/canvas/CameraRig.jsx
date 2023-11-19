@@ -1,16 +1,14 @@
+import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { easing } from "maath"
-
 import { useSnapshot } from "valtio"
 
 import state from '../store'
-import { useRef } from "react"
-
 const CameraRig = ({ children }) => {
 
   const group = useRef()
   const snap = useSnapshot(state)
-
+  
   useFrame((state, delta) => {
 
     const isBreakpoint = window.innerWidth <= 1260
@@ -28,7 +26,8 @@ const CameraRig = ({ children }) => {
     }
 
     // set model camera position
-    easing.damp3(group.current.position, targetPosition, 0.25, delta)
+    easing.damp3(state.camera.position, targetPosition, 0.25, delta)
+
 
     // set the model rotation smothly
     easing.dampE(
