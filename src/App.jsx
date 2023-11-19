@@ -1,12 +1,17 @@
+import Customizer from "./Customizer"
+import Canvas from "./canvas"
+import Home from "./pages/Home"
 
 
 function App() {
 
 
   return (
-    <div>
-      <h1 className="head-text">react app</h1>
-    </div>
+    <main className="app transition-all ease-in">
+      <Home />
+      <Canvas />
+      <Customizer />
+    </main>
   )
 }
 
